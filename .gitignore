@@ -1,0 +1,119 @@
+﻿# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+# /dist  - Allow dist folder to be uploaded for deployment
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Python - Virtual Environment (MUST NOT UPLOAD)
+/venv
+/env
+/ENV
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Angular
+/.angular/cache
+
+# Miscellaneous
+.sass-cache/
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python - Virtual Environment
+venv/
+env/
+ENV/
+
+# Python - Cache & Build
+# __pycache__/  - Allow uploading Python cache for reference
+*.py[cod]
+*.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+
+# Model Files - Large Data (except pre-trained models)
+*.h5
+*.hdf5
+# *.keras  - Allow trained models to be uploaded
+*.model
+*.ckpt
+*.onnx
+*.pb
+*.tflite
+
+# Data Files - Large
+*.parquet
+*.csv
+*.xlsx
+*.xls
+*.feather
+# *.pickle  - Allow important pickle files for model
+# *.pkl     - Allow pickle files for deployment
+*.joblib
+*.npy
+*.npz
+*.zip
+*.rar
+*.tar
+*.tar.gz
+*.gz
+
+# Data directories
+# Model/data/  - Allow uploading for reference
+# dataset/  - Allow dataset uploads
+# datasets/  - Allow datasets uploads
+# data/  - Allow data uploads
+checkpoints/
+models/
+logs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.*
+
+# OS-specific
+*.swp
+*.swo
+*~
