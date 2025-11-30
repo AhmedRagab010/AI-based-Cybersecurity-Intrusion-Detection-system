@@ -17,7 +17,7 @@ A high-accuracy intrusion detection system using Deep Neural Networks (Deep Lear
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/NUrNoUrAaa/DEEP-LEARNING-FOR-INTRUSION-DETECTION-SYSTEM.git
+git clone https://github.com/AhmedRagab010/AI-based-Cybersecurity-Intrusion-Detection-system
 cd DEEP-LEARNING-FOR-INTRUSION-DETECTION-SYSTEM
 ```
 
