@@ -1,0 +1,63 @@
+<div class="models-page">
+    <h2 class="page-title">Available Models</h2>
+
+    <!-- Toast Notification -->
+    <div class="toast" [ngClass]="{'show': showToast}">
+        <div class="toast-content">
+            <i class="pi pi-check-circle"></i>
+            <span>{{ toastMessage }}</span>
+        </div>
+    </div>
+
+    <div class="models-grid">
+        <div class="model-card animate-fade-in" *ngFor="let model of models; let i = index" [style.animationDelay]="(i * 120) + 'ms'" [ngClass]="{'preferred-card': model.preferred, 'active': model.preferred}">
+
+            <div class="model-header">
+                <i class="pi pi-database model-icon"></i>
+                <h3>{{model.name}}</h3>
+                <div class="current-badge" *ngIf="model.preferred">
+                    <i class="pi pi-star-fill"></i>
+                </div>
+            </div>
+
+            <div class="preferred-pill" *ngIf="model.preferred">
+                <i class="pi pi-check"></i> Current Model
+            </div>
+
+            <p class="model-desc">{{model.description}}</p>
+
+            <div class="metrics-row">
+                <div class="metric">
+                    <span class="metric-label">Accuracy</span>
+                    <span class="metric-value">{{model.accuracy}}%</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Latency</span>
+                    <span class="metric-value">{{model.latency_ms}}ms</span>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas baseChart [data]="getChartData(model)" [options]="chartOptions" [type]="'bar'">
+        </canvas>
+            </div>
+
+            <div class="actions">
+                <button class="btn-primary" (click)="setAsPreferred(model)" [disabled]="model.preferred" [ngClass]="{'btn-active': model.preferred}">
+                    <i class="pi" [ngClass]="model.preferred ? 'pi-star-fill' : 'pi-star'"></i>
+                    {{ model.preferred ? 'Current Model' : 'Set as Preferred' }}
+                </button>
+                <button class="btn-outline" (click)="showDetails(model)">
+                    <i class="pi pi-info-circle"></i> Details
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedModelForDetails" class="details-modal">
+        <app-model-details [model]="selectedModelForDetails"></app-model-details>
+        <button class="close-btn" (click)="selectedModelForDetails = null">
+            <i class="pi pi-times"></i>
+        </button>
+    </div>
+</div>

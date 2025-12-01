@@ -104,7 +104,6 @@ wheels/
 # datasets/  - Allow datasets uploads
 # data/  - Allow data uploads
 checkpoints/
-models/
 logs/
 
 # Environment
